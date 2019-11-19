@@ -1,0 +1,10 @@
+a {
+    text-decoration: none !important;
+    color: #000 !important;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.container {
+    background-color: #f8f9fa!important;
+}
