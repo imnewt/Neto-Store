@@ -27,33 +27,33 @@ const Header = props => {
     <div style={{backgroundColor: "#f8f9fa"}}>
       <div className="container">
         <Navbar color="light" light expand="md">
-          <NavbarBrand href="/" className="ml-3">
+          <NavbarBrand href="/">
             <img src={Logo} width={140} height={70}></img>
           </NavbarBrand>
           <NavbarToggler onClick={toggle} />
           <Collapse isOpen={isOpen} navbar>
-            <Nav className="mr-auto ml-5" navbar>
-            <NavItem>
+            <Nav className="mr-auto" navbar>
+              <NavItem>
                 <NavLink>
                   <Link to="/">HOME</Link>
                 </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink className="ml-4">
-                  <Link to="/">SHOP</Link>
-                </NavLink>
-              </NavItem>
-              <NavItem className="ml-4">
-                <NavLink>
-                  <Link to="/about">ABOUT</Link>
-                </NavLink>
-              </NavItem>
-              <NavItem className="ml-4">
-                <NavLink>
-                  <Link to="/contact">CONTACT</Link>
-                </NavLink>
-              </NavItem>
-              <NavItem>
+                </NavItem>
+                <NavItem>
+                  <NavLink className="ml-4">
+                    <Link to="/books/all">SHOP</Link>
+                  </NavLink>
+                </NavItem>
+                <NavItem className="ml-4">
+                  <NavLink>
+                    <Link to="/about">ABOUT</Link>
+                  </NavLink>
+                </NavItem>
+                <NavItem className="ml-4">
+                  <NavLink>
+                    <Link to="/contact">CONTACT</Link>
+                  </NavLink>
+                </NavItem>
+                <NavItem>
                 {/* <NavLink>
                   <CartContext.Consumer>
                     {({ cartItems }) => (
@@ -63,7 +63,7 @@ const Header = props => {
                 </NavLink> */}
               </NavItem>
             </Nav>
-            <Nav className="ml-auto mr-3" navbar>
+            <Nav className="ml-auto" navbar>
               <NavItem>
                 <NavLink>
                   <Link to="/search">
