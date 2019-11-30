@@ -17,7 +17,7 @@ class Carousel extends Component {
         {
             title: 'GREAT COLLECTION OF BOOKS',
             description:
-            'Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cras justo odio, dapibus ac facilisis.',
+            'Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.',
             button: 'Shop Now',
             image: 'https://cdn.shopify.com/s/files/1/0265/8933/1530/files/Home-2-Slider-1.jpg?v=1569215594',
             user: 'Newt',
@@ -35,7 +35,7 @@ class Carousel extends Component {
         {
             title: 'VARIETY PAYMENT METHOD',
             description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Duis mollis, est non commodo luctus, nisi erat porttitor ligula.',
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam.',
             button: 'Shop Now',
             image: 'https://cdn.shopify.com/s/files/1/0265/8933/1530/files/Home-2-Slider-2.png?v=1569062675',
             user: 'Jon Snow',
@@ -47,7 +47,7 @@ class Carousel extends Component {
     render() {
         const { content } = this.state;
         return (
-            <Slider className="slider-wrapper" autoplay={2500}>
+            <Slider className="slider-wrapper" autoplay={2500} disabled={true}>
                 {content.map((item, index) => (
                     <div
                         key={index}
@@ -58,7 +58,7 @@ class Carousel extends Component {
                             <h1>{item.title}</h1>
                             <p>{item.description}</p>
                             <Link to="/books/all">
-                                <button>{item.button}</button>
+                                <button className="crs-btn">{item.button}</button>
                             </Link>
                         </div>
                         <section>

@@ -10,6 +10,10 @@ body {
     outline: none;
 }
 
+.top-50 {
+    top: 50%;
+}
+
 button {
     -webkit-appearance: none;
     appearance: none;
@@ -55,12 +59,12 @@ button:hover {
 
 .slider-wrapper {
     position: relative;
-    height: 86.5vh;
+    height: 100vh;
     overflow: hidden;
 }
 
 .slide {
-    height: 86.5vh;
+    height: 100vh;
     background-size: cover !important;
 }
 

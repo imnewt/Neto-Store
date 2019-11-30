@@ -19,38 +19,40 @@ import {
 } from "reactstrap";
 
 const Header = props => {
+  
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
-
   return (
-    <div style={{backgroundColor: "#f8f9fa"}}>
+    <div style={{backgroundColor: "#f8f9fa"}} className="fixed-top">
       <div className="container">
         <Navbar color="light" light expand="md">
-          <NavbarBrand href="/">
-            <img src={Logo} width={140} height={70}></img>
+          <NavbarBrand>
+            <Link to="/">
+              <img src={Logo} width={140} height={70}></img>
+            </Link>
           </NavbarBrand>
           <NavbarToggler onClick={toggle} />
           <Collapse isOpen={isOpen} navbar>
-            <Nav className="mr-auto" navbar>
+            <Nav className="mr-auto ml-5" navbar>
               <NavItem>
                 <NavLink>
-                  <Link to="/">HOME</Link>
+                  <Link className="header-link" to="/">HOME</Link>
                 </NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink className="ml-4">
-                    <Link to="/books/all">SHOP</Link>
+                  <NavLink className="ml-5">
+                    <Link className="header-link" to="/books/all">SHOP</Link>
                   </NavLink>
                 </NavItem>
-                <NavItem className="ml-4">
+                <NavItem className="ml-5">
                   <NavLink>
-                    <Link to="/about">ABOUT</Link>
+                    <Link className="header-link" to="/about">ABOUT</Link>
                   </NavLink>
                 </NavItem>
-                <NavItem className="ml-4">
+                <NavItem className="ml-5">
                   <NavLink>
-                    <Link to="/contact">CONTACT</Link>
+                    <Link className="header-link" to="/contact">CONTACT</Link>
                   </NavLink>
                 </NavItem>
                 <NavItem>
