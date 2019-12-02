@@ -43,6 +43,13 @@
 
 .slide.animateIn.previous h1,
 .slide.current h1,
+.slide.animateIn.next h1 {
+	-webkit-transition-delay: .9s;
+	transition-delay: .9s;
+}
+
+.slide.animateIn.previous h1,
+.slide.current h1,
 .slide.animateIn.next h1,
 .slide.animateIn.previous button,
 .slide.current button,
@@ -55,8 +62,8 @@
 .slide.animateIn.next section * {
 	-webkit-transform: translateX(0);
 	transform: translateX(0);
-	-webkit-transition-delay: .9s;
-	transition-delay: .9s;
+	/* -webkit-transition-delay: .9s;
+	transition-delay: .9s; */
 	opacity: 1;
 }
 

@@ -9,7 +9,7 @@ import '../App.css';
 
 import NewtImg from "../images/newt.jpg";
 import KibutoImg from "../images/kibuto.png";
-import JonImg from "../images/jon.jpeg";
+import SuniImg from "../images/suni.jpg";
 
 class Carousel extends Component {
     state = {
@@ -38,8 +38,8 @@ class Carousel extends Component {
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam.',
             button: 'Shop Now',
             image: 'https://cdn.shopify.com/s/files/1/0265/8933/1530/files/Home-2-Slider-2.png?v=1569062675',
-            user: 'Jon Snow',
-            userProfile: JonImg
+            user: 'Suni',
+            userProfile: SuniImg
         }
         ]
     }
@@ -47,18 +47,18 @@ class Carousel extends Component {
     render() {
         const { content } = this.state;
         return (
-            <Slider className="slider-wrapper" autoplay={2500} disabled={true}>
+            <Slider className="slider-wrapper" autoplay={2500}>
                 {content.map((item, index) => (
                     <div
                         key={index}
                         className="slider-content"
                         style={{ background: `url('${item.image}') no-repeat center center` }}
                     >
-                        <div className="inner">
+                        <div className="inner pt-6">
                             <h1>{item.title}</h1>
                             <p>{item.description}</p>
                             <Link to="/books/all">
-                                <button className="crs-btn">{item.button}</button>
+                                <button>{item.button}</button>
                             </Link>
                         </div>
                         <section>

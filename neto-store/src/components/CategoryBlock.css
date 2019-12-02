@@ -4,3 +4,16 @@
     border-radius: 10px;
 }
 
+.elem-hover {
+    opacity: 0;
+    transform: translate(0, 1.5rem);
+}
+
+.ctn-hover:hover {
+    opacity: 0.8;
+}
+
+.ctn-hover:hover .elem-hover {
+    opacity: 1;
+    transform: none;
+}

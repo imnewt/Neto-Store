@@ -10,9 +10,19 @@ body {
     outline: none;
 }
 
+/* SOME USEFUL CSSs */
 .top-50 {
     top: 50%;
 }
+
+.pt-6 {
+    padding-top: 6rem;
+}
+
+.transition {
+    transition: all .3s !important;
+}
+/* =============== */
 
 button {
     -webkit-appearance: none;
@@ -89,7 +99,6 @@ button:hover {
 }
 
 .slider-content .inner {
-    padding: 0 70px;
     box-sizing: border-box;
     position: absolute;
     width: 100%;
@@ -99,6 +108,7 @@ button:hover {
     transform: translate(-50%, -50%);
 }
 
+/* CONSIDER PUT !IMPORTANT HERE */
 .slider-content .inner button{
     -webkit-transition-delay: 0s;
     transition-delay: 0s;
