@@ -36,7 +36,7 @@ export default class Home extends Component {
     const { categoryBlock } = this.state;
     return (
       <div>
-        <Carousel />
+        <Carousel/>
         <Container className="pt-5">
           <Row>
             {
@@ -46,8 +46,8 @@ export default class Home extends Component {
                 </Col>
               ))
             }
-            </Row>
-         </Container>
+          </Row>
+        </Container>
       </div>
     )
   }

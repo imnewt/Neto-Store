@@ -5,10 +5,8 @@ import axios from "axios";
 
 import Header from "./components/Header";
 import Home from "./components/Home";
+import Footer from "./components/Footer";
 
-function Products(){
-  return <h1>Products</h1>
-}
 
 function Books(){
   return (
@@ -17,11 +15,8 @@ function Books(){
 }
 
 class App extends Component {
-
   constructor(props) {
     super(props);
-    this.state = {
-    }
   }
   
   componentDidMount() {
@@ -29,15 +24,13 @@ class App extends Component {
   }
 
   render() {
-    
     return (
       <Router>
         <div className="App">
           <Header/>
-        
           <Route path="/" exact component={Home} />
-          <Route path="/products" component={Products} />
           <Route path="/books/all" exact component={Books} />
+          <Footer/>
         </div>
       </Router>
     )
