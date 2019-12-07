@@ -17,6 +17,10 @@ body {
     top: 50%;
 }
 
+.top-60 {
+    top: 60%;
+}
+
 .pt-6 {
     padding-top: 6rem;
 }
@@ -31,6 +35,27 @@ body {
 
 .hover-blue:hover {
     color:  #00bfc5 !important;
+}
+
+.font-weight-500 {
+    font-weight: 500;
+}
+
+.text-gray {
+    color: #878787;
+}
+
+.font-size-1-2 {
+    font-size: 1.2rem;
+}
+
+.head-image {
+    height: 30vh;
+    padding: 50px 0;
+    background-image: url("https://wallpaperaccess.com/full/464209.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 /* =============== */
 

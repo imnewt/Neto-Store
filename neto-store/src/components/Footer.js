@@ -100,7 +100,7 @@ class Footer extends Component {
     render() {
         const { contactIcon, time, info, qlinks, linkIcon } = this.state;
         return (
-            <div className="" style={{backgroundColor: "#f8f9fa"}}>
+            <div className="mt-5" style={{backgroundColor: "#f8f9fa"}}>
                 <Container className="border-bottom pb-3">
                     <Row>
                         <div className="col-12 col-md-6 col-lg-4 pt-5 d-flex flex-column">

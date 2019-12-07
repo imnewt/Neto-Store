@@ -1,26 +1,15 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
-import axios from "axios";
-
 import Header from "./components/Header";
 import Home from "./components/Home";
+import Books from "./components/Books";
+import Terms from "./components/Terms";
 import Footer from "./components/Footer";
-
-
-function Books(){
-  return (
-    <h1>Books</h1>
-  )
-}
 
 class App extends Component {
   constructor(props) {
     super(props);
-  }
-  
-  componentDidMount() {
-    axios.get("/books").then(res => this.setState({books: res.data}));
   }
 
   render() {
@@ -30,6 +19,7 @@ class App extends Component {
           <Header/>
           <Route path="/" exact component={Home} />
           <Route path="/books/all" exact component={Books} />
+          <Route path="/terms-conditions" exact component={Terms} />
           <Footer/>
         </div>
       </Router>
