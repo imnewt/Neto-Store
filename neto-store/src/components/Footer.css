@@ -1,9 +1,5 @@
-.list-unstyled .li-link {
+ .list-unstyled .li-link {
     color: #000;
-}
-
-.list-unstyled .li-link:hover  {
-    color: #00bfc5;
 }
 
 .border-bottom {

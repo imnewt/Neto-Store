@@ -17,8 +17,8 @@ body {
     top: 50%;
 }
 
-.top-60 {
-    top: 60%;
+.top-65 {
+    top: 65%;
 }
 
 .pt-6 {
@@ -45,8 +45,8 @@ body {
     color: #878787;
 }
 
-.font-size-1-2 {
-    font-size: 1.2rem;
+.font-size-text {
+    font-size: 1.15rem;
 }
 
 .head-image {
@@ -56,6 +56,10 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+}
+
+.info-link {
+    color: #000;
 }
 /* =============== */
 

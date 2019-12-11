@@ -93,8 +93,23 @@ class Footer extends Component {
                     name: Pinterest, 
                     url: "https://pinterest.com/"
                 },
-            ]
+            ],
+            intervalId: 0,
+            scrollStepInPx: "50",
+            delayInMs: "10"
         }
+    }
+  
+    scrollStep() {
+        if (window.pageYOffset === 0) {
+            clearInterval(this.state.intervalId);
+        }
+        window.scroll(0, window.pageYOffset - this.state.scrollStepInPx);
+    }
+  
+    scrollToTop() {
+        let intervalId = setInterval(this.scrollStep.bind(this), this.state.delayInMs);
+        this.setState({ intervalId: intervalId });
     }
 
     render() {
@@ -109,40 +124,40 @@ class Footer extends Component {
                                 contactIcon.map(item => (
                                     <div className="pt-3">
                                         <img src={item.url} width={24} height={24} />
-                                        <p className="d-inline pl-2">{item.content}</p>
+                                        <p className="d-inline font-size-text pl-2">{item.content}</p>
                                     </div>
                                 ))
                             }
                         </div>
                         <div className="col-12 col-md-6 col-lg-3 pt-5">
-                            <h4 className>Business Hours</h4>
+                            <h4>BUSINESS HOURS</h4>
                             <div>
                                 {
                                     time.map(item => (
-                                       <p className="pt-4 m-0">{item}</p>
+                                       <p className="pt-4 m-0 font-size-text">{item}</p>
                                     ))
                                 }
                             </div>
                         </div>
                         <div className="col-12 col-md-6 col-lg-3 pt-5">
-                            <h4 className>Information</h4>
+                            <h4 className>INFORMATION</h4>
                             <ul className="list-unstyled">
                                 {
                                     info.map(item => (
-                                        <li className="pt-4">
-                                           <Link to={item.url} className="li-link transition">{item.content}</Link>
+                                        <li className="pt-4 font-size-text">
+                                           <Link to={item.url} onClick={()=>{this.scrollToTop();}} className="li-link hover-blue transition">{item.content}</Link>
                                         </li>
                                     ))
                                 }
                             </ul>
                         </div>
                         <div className="col-12 col-md-6 col-lg-2 pt-5">
-                            <h4 className>Quick Links</h4>
+                            <h4 className>QUICK LINKS</h4>
                             <ul className="list-unstyled">
                                 {
                                     qlinks.map(item => (
-                                        <li className="pt-4">
-                                            <Link to={item.url} className="li-link transition">{item.content}</Link>
+                                        <li className="pt-4 font-size-text">
+                                            <Link to={item.url} onClick={()=>{this.scrollToTop();}} className="li-link hover-blue transition">{item.content}</Link>
                                         </li>
                                     ))
                                 }
@@ -152,7 +167,7 @@ class Footer extends Component {
                 </Container>
                 <Container className="pt-3">
                     <Row>
-                        <div className="col-12 col-md-6 d-flex justify-content-center justify-content-md-start">
+                        <div className="col-12 col-md-6 d-flex justify-content-center justify-content-md-start font-size-text">
                             <p>Copyright &#38; Copy <Link to="/" className="text-blue">Susan</Link> All Rights Reserved.</p>
                         </div>
                         <div className="col-12 col-md-6 d-flex justify-content-center justify-content-md-end pb-3">

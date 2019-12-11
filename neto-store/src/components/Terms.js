@@ -36,7 +36,7 @@ export default class Terms extends Component {
                 {   
                     heading: "Shipping Limitations",
                     content: [
-                        "When an order is placed, it will be shipped to an address designated by the purchaser as long as that shipping address is compliant with the shipping restrictions contained on this website.  All purchases from this website are made pursuant to a shipment contract.  As a result, risk of loss and title for items purchased from this website pass to you upon delivery of the items to the carrier.  You are responsible for filing any claims with carriers for damaged and/or lost shipments."
+                        "When an order is placed, it will be shipped to an address designated by the purchaser as long as that shipping address is compliant with the shipping restrictions contained on this website.  All purchases from this website are made pursuant to a shipment contract.  As a result, risk of loss and title for items purchased from this website pass to you upon delivery of the items to the carrier. You are responsible for filing any claims with carriers for damaged and/or lost shipments."
                     ]
                 },
                 {   
@@ -65,7 +65,7 @@ export default class Terms extends Component {
                     heading: "Exchange and Refund Policy (Online Shop)",
                     content: [
                         "Electronice Communications",
-                        "When you visit this website and/or send email to us, you consent to receive electronic communications from us. You agree that all agreements, notices, disclosures and other communications that we sent you electronically satisfy any legal requirement that such communications be in writing",
+                        "When you visit this website and/or send email to us, you consent to receive electronic communications from us. You agree that all agreements, notices, disclosures and other communications that we sent you electronically satisfy any legal requirement that such communications be in writing.",
                         "Exclusions of Warranties",
                         "The Company Private Limited makes no representative or warranty regarding the good working order or condition of this website, its suitability for use, or that its use will be uninterrupted or error-free. All information or material provided in this website to you and without warranties of any kind, expressed or implied, including without limitation, warranties or conditions of merchantability, fitness, quality, durability or suitability for any particular purpose, or non-infringement."
                     ]
@@ -79,7 +79,7 @@ export default class Terms extends Component {
         return  (
             <div>
                 <div className="position-relative head-image">
-                    <div className="position-absolute w-100 top-60 text-center">
+                    <div className="position-absolute w-100 top-65 text-center">
                         <h4 className="text-white">TERMS &#38; CONDITIONS</h4>
                     </div>
                 </div>
@@ -91,7 +91,7 @@ export default class Terms extends Component {
                                 <h2 className="pt-2">{item.heading}</h2>
                                 {
                                     Object.values(item.content).map(item => (
-                                        <p className="text-gray pt-2 font-size-1-2">{item}</p>
+                                        <p className="text-gray pt-2 font-size-text">{item}</p>
                                     ))
                                 }
                             </div>
