@@ -1,0 +1,24 @@
+.tracking-input {
+    padding: 0.5rem 1rem;
+}
+
+.tracking-input:focus {
+    border-color: #000;
+}
+
+.tracking-input::placeholder {
+    opacity: .5;
+}
+
+.track-btn {
+    background-color: #FFF;
+    color: #000;
+    border: 1px solid #000;
+    border-radius: 10px;
+}
+
+.track-btn:hover {
+    background-color: #00bfc5;
+    color: #fff;
+    border-color: #fff;
+}

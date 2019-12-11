@@ -23,8 +23,6 @@ export default class Policy extends Component {
         }
     }
 
-    
-
     render() { 
         const { policy } = this.state;
         return  (
@@ -34,7 +32,7 @@ export default class Policy extends Component {
                         <h4 className="text-white">PRIVACY POLICY</h4>
                     </div>
                 </div>
-                <Container className="pt-4">
+                <Container className="pt-5">
                     {
                         policy.map(item => (
                             <div className="pt-2">

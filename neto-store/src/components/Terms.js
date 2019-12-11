@@ -83,12 +83,11 @@ export default class Terms extends Component {
                         <h4 className="text-white">TERMS &#38; CONDITIONS</h4>
                     </div>
                 </div>
-                <Container className="pt-4">
-                    
+                <Container className="pt-5">
                     {
                         terms.map(item => (
                             <div>
-                                <h2 className="pt-2">{item.heading}</h2>
+                                <h3 className="pt-2">{item.heading}</h3>
                                 {
                                     Object.values(item.content).map(item => (
                                         <p className="text-gray pt-2 font-size-text">{item}</p>

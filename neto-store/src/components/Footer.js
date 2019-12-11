@@ -22,7 +22,7 @@ class Footer extends Component {
             contactIcon: [
                 { 
                     url: Address,
-                    content: "96, Jecica City, New York, USA"
+                    content: "19 Benoi Crescent, Singapore"
                 },
                 { 
                     url: Phone,

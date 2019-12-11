@@ -90,11 +90,11 @@ export default class Exchanges extends Component {
                         <h4 className="text-white">RETURNS &#38; EXCHANGES</h4>
                     </div>
                 </div>
-                <Container className="pt-4">
+                <Container className="pt-5">
                     {
                         exchanges.map(item => (
                             <div className="pt-2">
-                                <h2>{item.heading}</h2>
+                                <h3>{item.heading}</h3>
                                 {
                                     Object.values(item.content).map(item => (
                                         <div className="text-gray pt-2 font-size-text">{item}</div>

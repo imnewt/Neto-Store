@@ -10,6 +10,8 @@ import Footer from "./components/Footer";
 import Shipping from './components/Shipping';
 import Policy from './components/Policy';
 import StoreLocation from './components/StoreLocation';
+import FAQs from './components/FAQs';
+import OrderTracking from './components/OrderTracking';
 
 class App extends Component {
   constructor(props) {
@@ -28,6 +30,8 @@ class App extends Component {
           <Route path="/shipping-delivery" exact component={Shipping} />
           <Route path="/privacy-policy" exact component={Policy} />
           <Route path="/store-location" exact component={StoreLocation} />
+          <Route path="/faqs" exact component={FAQs} />
+          <Route path="/orders-tracking" exact component={OrderTracking} />
           <Footer/>
         </div>
       </Router>

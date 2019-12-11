@@ -88,11 +88,11 @@ export default class StoreLocation extends Component {
                         <h4 className="text-white">STORE LOCATION</h4>
                     </div>
                 </div>
-                <Container className="pt-4">
+                <Container className="pt-5">
                     {
                         storeLocation.map(item => (
                             <div className="pt-4">
-                                <h2>{item.nation}</h2>
+                                <h3>{item.nation}</h3>
                                 <Row>
                                 {
                                     Object.values(item.stores).map(item => (
