@@ -6,6 +6,7 @@ import Logo from "../images/logo.jpg";
 import SearchIcon from "../images/search-icon.svg";
 import CartIcon from "../images/cart-icon.svg";
 import AccountIcon from "../images/account-icon.svg";
+import { CartContext } from '../contexts/Cart';
 import "./Header.css"
 
 import {
@@ -55,15 +56,6 @@ const Header = props => {
                     <Link className="header-link" to="/contact">CONTACT</Link>
                   </NavLink>
                 </NavItem>
-                <NavItem>
-                {/* <NavLink>
-                  <CartContext.Consumer>
-                    {({ cartItems }) => (
-                      <Link to="/products">Cart ({cartItems.length})</Link>
-                    )}
-                  </CartContext.Consumer>
-                </NavLink> */}
-              </NavItem>
             </Nav>
             <Nav className="ml-auto" navbar>
               <NavItem>
@@ -74,10 +66,12 @@ const Header = props => {
                 </NavLink>
               </NavItem>
               <NavItem className="ml-4">
-                <NavLink>
-                  <Link to="/cart">
-                    <img src={CartIcon} width={24} height={24} />
-                  </Link>
+              <NavLink>
+                  <CartContext.Consumer>
+                    {({ cartItems }) => (
+                      <Link to="/cart"><img src={CartIcon} width={24} height={24} /> ({cartItems.length})</Link>
+                    )}
+                  </CartContext.Consumer>
                 </NavLink>
               </NavItem>
               <NavItem className="ml-4">
@@ -86,15 +80,6 @@ const Header = props => {
                     <img src={AccountIcon} width={24} height={24} style={{fontWeight:500}} />
                   </Link>
                 </NavLink>
-              </NavItem>
-              <NavItem>
-                {/* <NavLink>
-                  <CartContext.Consumer>
-                    {({ cartItems }) => (
-                      <Link to="/products">Cart ({cartItems.length})</Link>
-                    )}
-                  </CartContext.Consumer>
-                </NavLink> */}
               </NavItem>
             </Nav>
           </Collapse>
