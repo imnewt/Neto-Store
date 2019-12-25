@@ -7,7 +7,6 @@ export class CartProvider extends Component {
 
     this.state = {
       cartItems: [],
-      count: 1,
       sum: 0
     };
 
@@ -16,33 +15,51 @@ export class CartProvider extends Component {
     this.countDecrease = this.countDecrease.bind(this);
   }
 
-  countIncrease() {
+  countIncrease(book) {
     this.setState({
-      count: this.state.count + 1
-    })
+      cartItems: this.state.cartItems.map(item => {
+        if (item.name.toLowerCase() === book.name.toLowerCase()) {
+          item.count = item.count + 1;
+        }
+        return item;
+      }),
+      sum: this.state.sum += parseFloat(book.price)
+    });
   }
 
-  countDecrease() {
+  countDecrease(book) {
     this.setState({
-      count: this.state.count - 1
-    })
+      cartItems: this.state.cartItems.map(item => {
+        if (item.name.toLowerCase() === book.name.toLowerCase()) {
+          item.count = item.count - 1;
+        }
+        return item;
+      }),
+      sum: this.state.sum -= parseFloat(book.price)
+    });
   }
 
   addToCart(book) {
-    //this.state.sum += parseFloat(book.price);
-    let find = this.state.cartItems.find(item => item.name.toLowerCase() === book.name.toLowerCase());
-    if(find === undefined){
+    let find = this.state.cartItems.find(
+      item => item.name.toLowerCase() === book.name.toLowerCase()
+    );
+    if (find === undefined) {
+      const bookWithCount = { ...book, count: 1 };
       this.setState({
-        cartItems: this.state.cartItems.concat(book),
+        cartItems: [...this.state.cartItems, bookWithCount],
         sum: this.state.sum += parseFloat(book.price)
       });
-    }
-    else {
+    } else {
       this.setState({
-        count: this.state.count + 1
-      })
+        cartItems: this.state.cartItems.map(item => {
+          if (item.name.toLowerCase() === book.name.toLowerCase()) {
+            item.count += 1;
+          }
+          return item;
+        }),
+        sum: this.state.sum += parseFloat(find.price)
+      });
     }
-    
   }
 
   render() {
@@ -52,9 +69,8 @@ export class CartProvider extends Component {
           cartItems: this.state.cartItems,
           addToCart: this.addToCart,
           countIncrease: this.countIncrease,
-          countDecrease: this.countIncrease,
-          count: this.state.count,
-          sum: this.state.sum
+          countDecrease: this.countDecrease,
+          sum: (Math.round(this.state.sum*10)/10)
         }}
       >
         {this.props.children}
