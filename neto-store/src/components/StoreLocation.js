@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Container, Row } from 'reactstrap';
 
+import HeadImage from "./HeadImage"
+
 import "../App.css";
 
 export default class StoreLocation extends Component {
@@ -77,17 +79,11 @@ export default class StoreLocation extends Component {
         }
     }
 
-    
-
     render() { 
         const { storeLocation } = this.state;
         return  (
             <div>
-                <div className="position-relative head-image">
-                    <div className="position-absolute w-100 top-65 text-center">
-                        <h4 className="text-white">STORE LOCATION</h4>
-                    </div>
-                </div>
+                <HeadImage title="STORE LOCATION"/>
                 <Container className="pt-5">
                     {
                         storeLocation.map(item => (
@@ -109,5 +105,6 @@ export default class StoreLocation extends Component {
                     }
                 </Container>
             </div>
-    )}
+        )
+    }
 }

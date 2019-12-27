@@ -4,3 +4,15 @@
     font-size: 1.2rem;
     font-weight: 500;
 }
+
+.cart-container {
+    position: relative;
+}
+
+.cart-badge {
+    position: absolute;
+    --left: 0;
+    --width: 25px;
+    --height: 22px;
+}
+

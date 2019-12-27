@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Container } from 'reactstrap';
 
+import HeadImage from "./HeadImage"
+
 import "../App.css";
 
 export default class Shipping extends Component {
@@ -51,11 +53,7 @@ export default class Shipping extends Component {
         const { shipping } = this.state;
         return  (
             <div>
-                <div className="position-relative head-image">
-                    <div className="position-absolute w-100 top-65 text-center">
-                        <h4 className="text-white">SHIPPING &#38; DELIVERY</h4>
-                    </div>
-                </div>
+                <HeadImage title="SHIPPING &#38; DELIVERY"/>
                 <Container className="pt-5">
                     {
                         shipping.map(item => (

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Container, Row } from 'reactstrap';
 
+import HeadImage from "./HeadImage"
+
 import "../App.css";
 import "./OrderTracking.css"
 
@@ -16,11 +18,7 @@ export default class OrderTracking extends Component {
     render() { 
         return  (
             <div>
-                <div className="position-relative head-image">
-                    <div className="position-absolute w-100 top-65 text-center">
-                        <h4 className="text-white">ORDER TRACKING</h4>
-                    </div>
-                </div>
+                <HeadImage title="ORDER TRACKING"/>
 
                 <Container className="pt-5">
                     <p className="text-gray pt-3 font-size-text">To track your order please enter your Order ID in the box below and press the "Track" button. This was given to you on your receipt and in the confirmation email you should have received.</p>

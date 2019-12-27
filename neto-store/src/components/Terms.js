@@ -1,5 +1,7 @@
-import React, { Component } from 'react';
-import { Container } from 'reactstrap';
+import React, { Component } from 'react'
+import { Container } from 'reactstrap'
+
+import HeadImage from "./HeadImage"
 
 import "../App.css";
 
@@ -78,11 +80,7 @@ export default class Terms extends Component {
         const { terms } = this.state;
         return  (
             <div>
-                <div className="position-relative head-image">
-                    <div className="position-absolute w-100 top-65 text-center">
-                        <h4 className="text-white">TERMS &#38; CONDITIONS</h4>
-                    </div>
-                </div>
+                <HeadImage title="TERM &#38; CONDITION"/>
                 <Container className="pt-5">
                     {
                         terms.map(item => (
@@ -98,5 +96,6 @@ export default class Terms extends Component {
                     }
                 </Container>
             </div>
-    )}
+        )
+    }
 }

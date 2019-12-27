@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-
 import Logo from "../images/logo.jpg";
 import SearchIcon from "../images/search-icon.svg";
 import CartIcon from "../images/cart-icon.svg";
@@ -16,7 +15,8 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
-  NavLink
+  NavLink,
+  Badge
 } from "reactstrap";
 
 const Header = props => {
@@ -25,7 +25,7 @@ const Header = props => {
 
   const toggle = () => setIsOpen(!isOpen);
   return (
-    <div style={{backgroundColor: "#f8f9fa"}} className="fixed-top">
+    <div style={{backgroundColor: "#f8f9fa"}} id="myHeader">
       <div className="container">
         <Navbar color="light" light expand="md">
           <NavbarBrand>
@@ -66,10 +66,14 @@ const Header = props => {
                 </NavLink>
               </NavItem>
               <NavItem className="ml-4">
-              <NavLink>
+                <NavLink className="cart-container">
                   <CartContext.Consumer>
                     {({ cartItems }) => (
-                      <Link to="/cart"><img src={CartIcon} width={24} height={24} /> ({cartItems.length})</Link>
+                      <Link to="/cart">
+                        {/* <img src={CartIcon} width={24} height={24} /> ({cartItems.length}) */}
+                        <img src={CartIcon} width={24} height={24} />
+                        <Badge className="cart-badge" color="dark">{cartItems.length}</Badge>
+                      </Link>
                     )}
                   </CartContext.Consumer>
                 </NavLink>
