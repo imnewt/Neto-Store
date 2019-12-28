@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
-import axios from "axios";
+import { CartContext } from "../contexts/Cart";
 import {
   Spinner,
   Container,
   Row,
   Col
 } from "reactstrap";
-import { CartContext } from "../contexts/Cart";
-import './Books.css';
-import Star from '../images/star.svg';
 
-class Books extends Component {
+import axios from "axios";
+
+import './Books.css';
+
+export default class Books extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -26,7 +27,7 @@ class Books extends Component {
           isCompleted: false,
           books: res.data
         });
-      }, 2000);
+      }, 500);
     });
   }
 
@@ -54,13 +55,6 @@ class Books extends Component {
                         </div>
                         <div className='card__bottom'>
                           <h4 className="card__h4">{book.name}</h4>
-                          <div>
-                            <img src={Star} width={20} height={20} />
-                            <img src={Star} width={20} height={20} />
-                            <img src={Star} width={20} height={20} />
-                            <img src={Star} width={20} height={20} />
-                            <img src={Star} width={20} height={20} />
-                          </div>
                           <div className="position-absolute w-100 d-flex justify-content-center top-50 elem-hover transition">
                               <CartContext.Consumer>
                                 {({ addToCart }) => (
@@ -79,5 +73,3 @@ class Books extends Component {
     );
   }
 }
-
-export default Books;

@@ -1,11 +1,14 @@
 import React, { Component } from "react";
-import { Table } from "reactstrap";
+import { Table, Button } from "reactstrap";
 import { CartContext } from "../contexts/Cart";
+
 import './Cart.css';
-class Cart extends Component {
+
+export default class Cart extends Component {
   constructor(props) {
     super(props);
   }
+
   render() {
     return (
       <Table>
@@ -13,6 +16,7 @@ class Cart extends Component {
           <tr>
             <th>Image</th>
             <th>Name</th>
+            <th>Quantity</th>
             <th>Price</th>
           </tr>
         </thead>
@@ -24,17 +28,17 @@ class Cart extends Component {
                   <td>
                     <img
                       src={value.imageUrl}
-                      alt="Error"
+                      alt="Book Image"
                       width="50"
                       height="70"
                     />
                   </td>
+                  <td className="font-weight-500">{value.name}</td>
                   <td>
-                    <button className='button_cart' onClick={() => countIncrease(value)}>+ </button>
+                    <Button outline color="info" className="mr-3" onClick={() => countDecrease(value)}>-</Button>
                      {value.count} 
-                    <button className='button_cart' onClick={() => countDecrease(value)}> -</button>
+                    <Button outline color="info" className="ml-3" onClick={() => countIncrease(value)}>+</Button>
                   </td>
-                  <td>{value.name}</td>
                   <td>{(Math.round((value.count * value.price) * 10)/10)}</td>
                 </tr>
               ))
@@ -53,5 +57,3 @@ class Cart extends Component {
     );
   }
 }
-
-export default Cart;
