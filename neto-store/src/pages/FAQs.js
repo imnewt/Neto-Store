@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Container } from 'reactstrap';
 
-import HeadImage from "./HeadImage"
+import HeadImage from "../components/HeadImage"
 
 import "../App.css";
 

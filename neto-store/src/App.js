@@ -2,17 +2,17 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import Header from "./components/Header";
-import Cart from './components/Cart';
-import Home from "./components/Home";
-import Books from "./components/Books";
-import Terms from "./components/Terms";
-import Exchanges from "./components/Exchanges";
+import Cart from './pages/Cart';
+import Home from "./pages/Home";
+import Books from "./pages/Books";
+import Terms from "./pages/Terms";
+import Exchanges from "./pages/Exchanges";
 import Footer from "./components/Footer";
-import Shipping from './components/Shipping';
-import Policy from './components/Policy';
-import StoreLocation from './components/StoreLocation';
-import FAQs from './components/FAQs';
-import OrderTracking from './components/OrderTracking';
+import Shipping from './pages/Shipping';
+import Policy from './pages/Policy';
+import StoreLocation from './pages/StoreLocation';
+import FAQs from './pages/FAQs';
+import OrderTracking from './pages/OrderTracking';
 
 import { CartProvider } from './contexts/Cart';
 

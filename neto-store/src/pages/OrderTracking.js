@@ -1,20 +1,12 @@
 import React, { Component } from 'react';
 import { Container, Row } from 'reactstrap';
 
-import HeadImage from "./HeadImage"
+import HeadImage from "../components/HeadImage"
 
 import "../App.css";
 import "./OrderTracking.css"
 
 export default class OrderTracking extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-           
-            
-        }
-    }
-
     render() { 
         return  (
             <div>

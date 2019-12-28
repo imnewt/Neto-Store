@@ -8,8 +8,8 @@ import {
 
 import "../App.css";
 
-import Carousel from "./Carousel";
-import CategoryBlock from "./CategoryBlock";
+import Carousel from "../components/Carousel";
+import CategoryBlock from "../components/CategoryBlock";
 
 export default class Home extends Component {
   constructor(props) {
