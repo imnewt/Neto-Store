@@ -20,6 +20,9 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      intervalId: 0,
+      scrollStepInPx: "50",
+      delayInMs: "10"
     }
   }
 
@@ -35,6 +38,25 @@ class App extends Component {
         header.classList.remove("sticky");
       }
     }
+  }
+
+  scrollStep() {
+    if (window.pageYOffset === 0) {
+      clearInterval(this.state.intervalId);
+    }
+    window.scroll(0, window.pageYOffset - this.state.scrollStepInPx);
+  }
+
+  scrollToTop() {
+    let intervalId = setInterval(
+      this.scrollStep.bind(this),
+      this.state.delayInMs
+    );
+    this.setState({ intervalId: intervalId });
+  }
+
+  componentWillUpdate() {
+    this.scrollToTop();
   }
 
   render() {
