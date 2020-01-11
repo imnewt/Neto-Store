@@ -121,8 +121,8 @@ class Footer extends Component {
           <Row>
             <div className="col-12 col-md-6 col-lg-3 pt-5 d-flex flex-column">
               <img src={Logo} width={140} height={70} />
-              {contactIcon.map(item => (
-                <div className="pt-3">
+              {contactIcon.map((item, index) => (
+                <div key={index} className="pt-3">
                   <img src={item.url} width={24} height={24} />
                   <p className="d-inline font-size-text pl-2">{item.content}</p>
                 </div>
@@ -137,7 +137,7 @@ class Footer extends Component {
               </div>
             </div>
             <div className="col-12 col-md-6 col-lg-3 pt-5">
-              <h4 className>INFORMATION</h4>
+              <h4>INFORMATION</h4>
               <ul className="list-unstyled">
                 {info.map(item => (
                   <li className="pt-4 font-size-text">

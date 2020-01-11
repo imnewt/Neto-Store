@@ -47,11 +47,11 @@ export default class Books extends Component {
         }
         <Row>
           {
-            books.map(book => (
-                <Col sm="4" className="pt-3">
+            books.map( (book, index) => (
+                <Col key={index} sm="4" className="pt-3">
                     <div className="card">
                         <div className="card__top">
-                          <img class="card-img-top" src={book.imageUrl} width="100%" alt="image"/>
+                          <img className="card-img-top" src={book.imageUrl} width="100%" alt="image"/>
                         </div>
                         <div className='card__bottom'>
                           <h4 className="card__h4">{book.name}</h4>
