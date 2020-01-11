@@ -24,6 +24,7 @@ const Header = props => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
+
   return (
     <div style={{backgroundColor: "#f8f9fa"}} id="myHeader">
       <div className="container">
@@ -68,11 +69,10 @@ const Header = props => {
               <NavItem className="ml-4">
                 <NavLink className="cart-container">
                   <CartContext.Consumer>
-                    {({ cartItems }) => (
+                    {({ count }) => (
                       <Link to="/cart">
-                        {/* <img src={CartIcon} width={24} height={24} /> ({cartItems.length}) */}
                         <img src={CartIcon} width={24} height={24} />
-                        <Badge className="cart-badge" color="dark">{cartItems.length}</Badge>
+                        <Badge className="cart-badge" color="dark">{count}</Badge>
                       </Link>
                     )}
                   </CartContext.Consumer>
