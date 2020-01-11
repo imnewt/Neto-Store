@@ -28,18 +28,6 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-function createData(name, calories, fat, carbs, protein) {
-  return { name, calories, fat, carbs, protein };
-}
-
-const rows = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
-];
-
 const StyledTableCell = withStyles(theme => ({
   head: {
     backgroundColor: theme.palette.common.black,
@@ -65,7 +53,8 @@ export default function Cart() {
     <CartContext.Consumer>
       {
         ({ cartItems, countIncrease, removeFromCart, sum }) => (
-          cartItems.length ?<TableContainer component={Paper}>
+          cartItems.length 
+          ? <TableContainer component={Paper}>
             <Table className={classes.table} aria-label="customized table">
             <TableHead>
               <TableRow>
@@ -118,7 +107,10 @@ export default function Cart() {
                 </StyledTableRow>
               </TableBody>
             </Table>
-          </TableContainer> : <div align="center">Nothing here</div>
+          </TableContainer> 
+          : <div className="d-flex justify-content-center align-items-center text-center" style={{height: "50vh" }}>
+              <p style={{fontSize: 20 }}>Your cart is empty now. Please add some books and return ^^</p>
+            </div>
         )
       }
     </CartContext.Consumer>
