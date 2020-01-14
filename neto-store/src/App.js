@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import Header from "./components/Header";
 import Cart from './pages/Cart';
+import Login from './pages/Login';
 import Home from "./pages/Home";
 import Books from "./pages/Books";
 import Terms from "./pages/Terms";
@@ -69,6 +70,7 @@ class App extends Component {
               <Route path="/" exact component={Home} />
               <Route path="/books/all" exact component={Books} />
               <Route path="/Cart" exact component={Cart} />
+              <Route path="/Account" exact component={Login} />
               <Route path="/terms-conditions" exact component={Terms} />
               <Route path="/returns-exchanges" exact component={Exchanges} />
               <Route path="/shipping-delivery" exact component={Shipping} />
