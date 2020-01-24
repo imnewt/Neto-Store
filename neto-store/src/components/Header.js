@@ -31,7 +31,7 @@ const Header = props => {
         <Navbar color="light" light expand="md">
           <NavbarBrand>
             <Link to="/">
-              <img src={Logo} width={140} height={70}></img>
+              <img src={Logo} width={140} height={70} alt="error"/>
             </Link>
           </NavbarBrand>
           <NavbarToggler onClick={toggle} />
@@ -62,7 +62,7 @@ const Header = props => {
               <NavItem>
                 <NavLink>
                   <Link to="/search">
-                    <img src={SearchIcon} width={24} height={24} />
+                    <img src={SearchIcon} width={24} height={24} alt="error"/>
                   </Link>
                 </NavLink>
               </NavItem>
@@ -71,7 +71,7 @@ const Header = props => {
                   <CartContext.Consumer>
                     {({ count }) => (
                       <Link to="/cart">
-                        <img src={CartIcon} width={24} height={24} />
+                        <img src={CartIcon} width={24} height={24} alt="error"/>
                         <Badge className="cart-badge" color="dark">{count}</Badge>
                       </Link>
                     )}
@@ -80,8 +80,8 @@ const Header = props => {
               </NavItem>
               <NavItem className="ml-4">
                 <NavLink>
-                  <Link to="/account">
-                    <img src={AccountIcon} width={24} height={24} style={{fontWeight:500}} />
+                  <Link to="/api/account/signin">
+                    <img src={AccountIcon} width={24} height={24} style={{fontWeight:500}} alt="error"/>
                   </Link>
                 </NavLink>
               </NavItem>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 // import { Table, Button } from "reactstrap";
 import { CartContext } from "../contexts/Cart";
 import { withStyles, makeStyles } from '@material-ui/core/styles';
@@ -11,7 +11,6 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Button from '@material-ui/core/Button';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
-import Container from '@material-ui/core/Container';
 import './Cart.css';
 
 const useStyles = makeStyles(theme => ({
@@ -70,7 +69,7 @@ export default function Cart() {
                   cartItems.map(value => (
                     <StyledTableRow key={value.name}>
                       <StyledTableCell align="center" component="th" scope="value">
-                        <img
+                        <image
                           src={value.imageUrl}
                           alt="Book Image"
                           width="50"

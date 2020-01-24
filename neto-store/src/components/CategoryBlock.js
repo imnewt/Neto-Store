@@ -10,7 +10,7 @@ export default function(props) {
         <div className="pt-4">
             <div className="position-relative ctn-hover transition">
                 <Link to={link}>
-                    <img src={imgUrl} width="100%" />
+                    <img src={imgUrl} width="100%" alt="error"/>
                     <div className="position-absolute w-100 d-flex justify-content-center top-50 elem-hover transition">
                         <button className="cate-btn">Explore</button>
                     </div>
