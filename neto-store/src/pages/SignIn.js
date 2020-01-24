@@ -101,6 +101,7 @@ const useStyles = makeStyles(theme => ({
 
 export default function Login(props) {
     const classes = useStyles();
+    const { history } = props;
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [token, setToken] = useState('');
@@ -109,7 +110,7 @@ export default function Login(props) {
     //     callBackendAPI();
     // })
 
-    const _handleOnSignIn = () => {
+    const _handleSignIn = () => {
         fetch('/api/account/signin', {
             method: 'POST',
             headers: {
@@ -125,6 +126,7 @@ export default function Login(props) {
         .then(json => {
             if(json.success) {
                 setError(json.message);
+                history.push('/');
             }
         })
     }
@@ -155,7 +157,7 @@ export default function Login(props) {
                         type="password"
                         autoComplete="current-password" 
                     />
-                    <Button onClick={_handleOnSignIn} className={classes.btn} variant="contained" color="primary">Đăng nhập</Button>
+                    <Button onClick={_handleSignIn} className={classes.btn} variant="contained" color="primary">Đăng nhập</Button>
                 </div>
                 <Grid container>
                     <Grid className={classes.space} item xs={12} md={6}>

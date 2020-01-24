@@ -47,6 +47,7 @@ const useStyles = makeStyles(theme => ({
 
 export default function Login(props) {
     const classes = useStyles();
+    const { history } = props;
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [name, setName] = useState('');
@@ -75,13 +76,8 @@ export default function Login(props) {
         .then(json => {
             console.log(json);
             if(json.success) {
-                setError(json.message)
-                setName('');
-                setEmail('');
-                setPassword('');
-                setPhone('');
-                setAddress('');
-                setIc('');
+                setError(json.message);
+                history.push('/api/account/signin');
             }
         })
     }
