@@ -4,9 +4,23 @@ module.exports.signup = (req, res, next) => {
     const { body } = req;
     let { name, email, password, phone, address, ic } = body;
 
+    if(!name && !email && !password && !phone && !address && !ic) {
+        return res.send({
+            success: false,
+            errorName: true,
+            errorEmail: true,
+            errorPassword: true,
+            errorPhone: true,
+            errorAddress: true,
+            errorIc: true,
+            message: 'Error: Fields cannot be blank'
+        })
+    }
+
     if(!name) {
         return res.send({
             success: false,
+            errorName: true,
             message: 'Error: Name cannot be blank'
         })
     }
@@ -14,6 +28,7 @@ module.exports.signup = (req, res, next) => {
     if(!email) {
         return res.send({
             success: false,
+            errorEmail: true,
             message: 'Error: Email cannot be blank'
         })
     }
@@ -21,6 +36,7 @@ module.exports.signup = (req, res, next) => {
     if(!password) {
         return res.send({
             success: false,
+            errorPassword: true,
             message: 'Error: Password cannot be blank'
         })
     }
@@ -28,6 +44,7 @@ module.exports.signup = (req, res, next) => {
     if(!phone) {
         return res.send({
             success: false,
+            errorPhone: true,
             message: 'Error: Phone cannot be blank'
         })
     }
@@ -35,6 +52,7 @@ module.exports.signup = (req, res, next) => {
     if(!address) {
         return res.send({
             success: false,
+            errorAddress: true,
             message: 'Error: Address cannot be blank'
         })
     }
@@ -42,6 +60,7 @@ module.exports.signup = (req, res, next) => {
     if(!ic) {
         return res.send({
             success: false,
+            errorIc: true,
             message: 'Error: Identity card(IC) cannot be blank'
         })
     }
@@ -60,6 +79,7 @@ module.exports.signup = (req, res, next) => {
         else if(previousUsers.length > 0) {
             return res.send({
                 success: false,
+                errorEmail: true,
                 message: 'Error: Account already exist.'
             })
         }
@@ -92,9 +112,19 @@ module.exports.signin = (req, res, next) => {
     const { body } = req;
     let { email, password } = body;
 
+    if(!email && !password) {
+        return res.send({
+            success: false,
+            errorEmail: true,
+            errorPassword: true,
+            message: 'Error: Email & Password cannot be blank'
+        })
+    }
+
     if(!email) {
         return res.send({
             success: false,
+            errorEmail: true,
             message: 'Error: Email cannot be blank'
         })
     }
@@ -102,6 +132,7 @@ module.exports.signin = (req, res, next) => {
     if(!password) {
         return res.send({
             success: false,
+            errorPassword: true,
             message: 'Error: Password cannot be blank'
         })
     }
@@ -122,6 +153,7 @@ module.exports.signin = (req, res, next) => {
         if(users.length !== 1) {
             return res.send({
                 success: false,
+                errorEmail: true,
                 message: 'Error: Email Invalid'
             })
         }
@@ -131,6 +163,7 @@ module.exports.signin = (req, res, next) => {
         if(!user.validPassword(password)) {
             return res.send({
                 success: false,
+                errorPassword: true,
                 message: 'Error: Password Invalid'
             })
         }
@@ -151,7 +184,6 @@ module.exports.signin = (req, res, next) => {
                 message: 'Valid sign in',
                 token: doc._id
             })
-            // return res.redirect(doc._id, '/');
         })
     })
 }
@@ -185,7 +217,7 @@ module.exports.verify = (req, res, next) => {
     });
 }
 
-module.exports.logout = (req, res, next) => {
+module.exports.signout = (req, res, next) => {
     const { query } = req;
     const { token } = query;
     

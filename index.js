@@ -7,7 +7,7 @@ const bodyParser = require('body-parser');
 const signUpRoutes = require('./routes/api/auth');
 const signInRoutes = require('./routes/api/auth');
 const verifyRoutes = require('./routes/api/auth');
-const logOutRoutes = require('./routes/api/auth');
+const signOutRoutes = require('./routes/api/auth');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -38,7 +38,7 @@ app.get('/books', async (req, res) => {
 app.use('/api', signUpRoutes);
 app.use('/api', signInRoutes);
 app.use('/api', verifyRoutes);
-app.use('/api', logOutRoutes)
+app.use('/api', signOutRoutes)
 app.listen(5000, () => {
    console.log('App listening on port 5000')
 });

@@ -96,6 +96,11 @@ const useStyles = makeStyles(theme => ({
     },
     space: {
         margin: `10px 0px`
+    },
+    textError: {
+        color: 'red',
+        textAlign: 'center',
+        marginBottom: `10px`
     }
 }));
 
@@ -106,6 +111,8 @@ export default function Login(props) {
     const [password, setPassword] = useState('');
     const [token, setToken] = useState('');
     const [error, setError] = useState('');
+    const [errorEmail, setErrorEmail] = useState(false);
+    const [errorPassword, setErrorPassword] = useState(false);
     // useEffect(() => {
     //     callBackendAPI();
     // })
@@ -127,6 +134,10 @@ export default function Login(props) {
             if(json.success) {
                 setError(json.message);
                 history.push('/');
+            } else {
+                setError(json.message);
+                setErrorEmail(json.errorEmail || false);
+                setErrorPassword(json.errorPassword || false);
             }
         })
     }
@@ -143,12 +154,13 @@ export default function Login(props) {
                 <Typography className={classes.text} component="h2">
                     Sử dụng tài khoản NetoStore của bạn
                 </Typography>
-                {error && <Typography className={classes.text} component="h5">
-                    {error}
-                </Typography>}
-                <div className={classes.root} noValidate autoComplete="off">
-                    <TextField name='email' onChange={event => setEmail(event.target.value)} value={email} id="standard-basic" label="email" />
+                <div className={classes.root} autoComplete="on">
+                    <>{error && <Typography className={classes.textError} component="h5">
+                        {error}
+                    </Typography>}</>
+                    <TextField error={errorEmail} name='email' onChange={event => setEmail(event.target.value)} value={email} id="standard-basic" label="email" />
                     <TextField 
+                        error={errorPassword}
                         name='password'
                         onChange={event => setPassword(event.target.value)}
                         value={password}
