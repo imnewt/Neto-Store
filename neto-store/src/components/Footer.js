@@ -116,14 +116,14 @@ class Footer extends Component {
   render() {
     const { contactIcon, time, info, qlinks, linkIcon } = this.state;
     return (
-      <div className="mt-5" style={{ backgroundColor: "#f8f9fa" }}>
+      <div className="mt-5" style={{ backgroundColor: "#f8f9fa", position: 'relative', bottom: 0 }}>
         <Container className="border-bottom pb-3">
           <Row>
             <div className="col-12 col-md-6 col-lg-3 pt-5 d-flex flex-column">
-              <img src={Logo} width={140} height={70} />
+              <img src={Logo} width={140} height={70} alt="error"/>
               {contactIcon.map((item, index) => (
                 <div key={index} className="pt-3">
-                  <img src={item.url} width={24} height={24} />
+                  <img src={item.url} width={24} height={24} alt="error"/>
                   <p className="d-inline font-size-text pl-2">{item.content}</p>
                 </div>
               ))}
@@ -131,16 +131,16 @@ class Footer extends Component {
             <div className="col-12 col-md-6 col-lg-3 pt-5">
               <h4>BUSINESS HOURS</h4>
               <div>
-                {time.map(item => (
-                  <p className="pt-4 m-0 font-size-text">{item}</p>
+                {time.map( (item, index) => (
+                  <p key={index} className="pt-4 m-0 font-size-text">{item}</p>
                 ))}
               </div>
             </div>
             <div className="col-12 col-md-6 col-lg-3 pt-5">
               <h4>INFORMATION</h4>
               <ul className="list-unstyled">
-                {info.map(item => (
-                  <li className="pt-4 font-size-text">
+                {info.map( (item, index) => (
+                  <li key={index} className="pt-4 font-size-text">
                     <Link
                       to={item.url}
                       onClick={() => {
@@ -155,10 +155,10 @@ class Footer extends Component {
               </ul>
             </div>
             <div className="col-12 col-md-6 col-lg-3 pt-5">
-              <h4 className>QUICK LINKS</h4>
+              <h4>QUICK LINKS</h4>
               <ul className="list-unstyled">
-                {qlinks.map(item => (
-                  <li className="pt-4 font-size-text">
+                {qlinks.map( (item, index) => (
+                  <li key={index} className="pt-4 font-size-text">
                     <Link
                       to={item.url}
                       onClick={() => {
@@ -186,13 +186,14 @@ class Footer extends Component {
               </p>
             </div>
             <div className="col-12 col-md-6 d-flex justify-content-center justify-content-md-end pb-3">
-              {linkIcon.map(item => (
-                <a href={item.url} target="_blank" className="ml-4 mr-4">
+              {linkIcon.map( (item, index) => (
+                <a key={index} href={item.url} target="_blank" rel="noopener noreferrer" className="ml-4 mr-4">
                   <img
                     src={item.name}
                     width={18}
                     height={18}
                     className="hover-blue"
+                    alt="error"
                   />
                 </a>
               ))}
