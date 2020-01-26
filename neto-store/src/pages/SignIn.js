@@ -66,6 +66,7 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import Neto from '../images/logo.jpg';
+import { setInStorage } from '../utils/storage';
 import { Grid } from '@material-ui/core';
 const useStyles = makeStyles(theme => ({
     container: {
@@ -114,11 +115,16 @@ export default function Login(props) {
     const [errorEmail, setErrorEmail] = useState(false);
     const [errorPassword, setErrorPassword] = useState(false);
     // useEffect(() => {
-    //     callBackendAPI();
+    //     refreshPage();
     // })
 
-    const _handleSignIn = () => {
-        fetch('/api/account/signin', {
+    const refreshPage = () => {
+        history.push('/');
+        window.location.reload(false);
+    }
+
+    const _handleSignIn = async () => {
+        await fetch('/api/account/signin', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -132,8 +138,10 @@ export default function Login(props) {
         .then(res => res.json())
         .then(json => {
             if(json.success) {
+                console.log(json);
+                setInStorage('tokenId', json.token);
                 setError(json.message);
-                history.push('/');
+                refreshPage();
             } else {
                 setError(json.message);
                 setErrorEmail(json.errorEmail || false);

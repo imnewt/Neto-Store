@@ -210,9 +210,31 @@ module.exports.verify = (req, res, next) => {
             })
         }
 
-        return res.send({
-            success: true,
-            message: 'Good'
+        const userId = sessions[0].userId
+        User.find({
+            _id: userId,
+            isDeleted: false
+        }, (err, users) => {
+            if(err) {
+                return res.send({
+                    success: false,
+                    message: 'Error: Server error'
+                })
+            }
+
+            if(users.length !== 1) {
+                return res.send({
+                    success: false,
+                    message: 'Error: Invalid'
+                })
+            }
+            
+            return res.send({
+                success: true,
+                name: users[0].name,
+                message: 'Good'
+            })
+
         })
     });
 }
