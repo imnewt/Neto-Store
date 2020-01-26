@@ -23,7 +23,7 @@ const useStyles = makeStyles(theme => ({
     color: theme.palette.text.secondary,
   },
   table: {
-    minWidth: 700,
+    minWidth: 0,
   },
 }));
 
@@ -69,7 +69,7 @@ export default function Cart() {
                   cartItems.map(value => (
                     <StyledTableRow key={value.name}>
                       <StyledTableCell align="center" component="th" scope="value">
-                        <image
+                        <img
                           src={value.imageUrl}
                           alt="Book Image"
                           width="50"

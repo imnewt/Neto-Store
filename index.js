@@ -4,6 +4,7 @@ mongoose.connect("mongodb://localhost/netodb", { useNewUrlParser: true });
 
 const app = express();
 const bodyParser = require('body-parser');
+const indexRoutes = require('./routes/api/book');
 const signUpRoutes = require('./routes/api/auth');
 const signInRoutes = require('./routes/api/auth');
 const verifyRoutes = require('./routes/api/auth');
@@ -11,12 +12,11 @@ const signOutRoutes = require('./routes/api/auth');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-const Book = require("./models/book.model");
+// const Book = require("./models/book.model");
 
-app.get('/books', async (req, res) => {
-   const books = await Book.find();
-   res.send(books);
-});
+// app.get('/books', async (req, res) => {
+   
+// });
 
 // app.post('/account', function(req, res) {
 //    console.log(req.body);
@@ -34,11 +34,11 @@ app.get('/books', async (req, res) => {
 //    const user = await User.create(req.body);
 //    res.json(user);
 // });
-
+app.use('/api', indexRoutes);
 app.use('/api', signUpRoutes);
 app.use('/api', signInRoutes);
 app.use('/api', verifyRoutes);
-app.use('/api', signOutRoutes)
+app.use('/api', signOutRoutes);
 app.listen(5000, () => {
    console.log('App listening on port 5000')
 });
